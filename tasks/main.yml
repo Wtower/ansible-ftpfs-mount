@@ -1,0 +1,16 @@
+---
+# Mount ftpfs
+
+- name: Check curlftpfs package
+  apt: name=curlftpfs state=present
+  become: true
+
+- name: Create mount point
+  file: path="{{ ftp_mount_dir }}" state=directory
+
+- name: Construct connection string
+  set_fact: ftp_conn="{{ ftp_user }}:{{ ftp_pass }}@{{ ftp_host }}{{ ftp_path }}"
+  when: ftp_conn is not defined
+
+- name: Mount FTP
+  command: curlftpfs user="" "{{ ftp_conn }}" "{{ ftp_mount_dir }}"/

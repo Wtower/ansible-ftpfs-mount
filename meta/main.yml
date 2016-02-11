@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: George Karakostas
+  description: Mount a FTP site on filesystem using curlftpfs
+  company: 9dev
+  license: BSD
+  min_ansible_version: 2.1
+  platforms:
+  - name: Ubuntu
+    versions:
+      - lucid
+      - maverick
+      - natty
+      - oneiric
+      - precise
+      - quantal
+      - raring
+      - saucy
+      - trusty
+      - utopic
+      - vivid
+      - wily
+  galaxy_tags:
+    - system
+
+dependencies: []
